@@ -1,10 +1,11 @@
+const MESSAGE_GRID_INVALID = 'Grid invalid';
 function rotate2dKtime(grid, kRotation) {
   if (
     !Array.isArray(grid) ||
     grid.length <= 0 ||
     !grid.every(row => Array.isArray(row))
   ) {
-    throw new Error('Grid invalid');
+    throw new Error(MESSAGE_GRID_INVALID);
   }
   if (kRotation > 4) {
     kRotation = kRotation % 4;
@@ -33,4 +34,4 @@ function rotate2d90degree(grid) {
   }
   return newGrid;
 }
-export { rotate2dKtime };
+export { rotate2dKtime, MESSAGE_GRID_INVALID };

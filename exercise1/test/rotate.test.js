@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { rotate2dKtime } from '../src/index';
+import { rotate2dKtime, MESSAGE_GRID_INVALID } from '../src/index';
 describe('Rotate12dDegreesKTime', function() {
   const grid2D = [[0, 16, 255], [8, 128, 32], [0, 0, 0]];
   it('Rotate 1 time', function() {
@@ -49,7 +49,7 @@ describe('Rotate12dDegreesKTime', function() {
     const time = 1;
     expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
       Error,
-      'Grid invalid'
+      MESSAGE_GRID_INVALID
     );
   });
   it('Throw Exception when grid is number', function() {
@@ -57,7 +57,7 @@ describe('Rotate12dDegreesKTime', function() {
     const time = 1;
     expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
       Error,
-      'Grid invalid'
+      MESSAGE_GRID_INVALID
     );
   });
   it('Throw Exception when grid is empty', function() {
@@ -65,7 +65,7 @@ describe('Rotate12dDegreesKTime', function() {
     const time = 1;
     expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
       Error,
-      'Grid invalid'
+      MESSAGE_GRID_INVALID
     );
   });
   it('Throw Exception when grid is array', function() {
@@ -73,7 +73,7 @@ describe('Rotate12dDegreesKTime', function() {
     const time = 1;
     expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
       Error,
-      'Grid invalid'
+      MESSAGE_GRID_INVALID
     );
   });
 });

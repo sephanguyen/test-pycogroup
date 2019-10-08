@@ -1,4 +1,11 @@
 function rotate2dKtime(grid, kRotation) {
+  if (
+    !Array.isArray(grid) ||
+    grid.length <= 0 ||
+    !grid.every(row => Array.isArray(row))
+  ) {
+    throw new Error('Grid invalid');
+  }
   if (kRotation > 4) {
     kRotation = kRotation % 4;
   }

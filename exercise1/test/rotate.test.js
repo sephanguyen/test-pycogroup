@@ -44,4 +44,36 @@ describe('Rotate12dDegreesKTime', function() {
     const time = 1;
     expect(rotate2dKtime(grid2D4x4, time)).to.eql(expectedGrid2D);
   });
+  it('Throw Exception when grid is string', function() {
+    const gridInvalid = '';
+    const time = 1;
+    expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
+      Error,
+      'Grid invalid'
+    );
+  });
+  it('Throw Exception when grid is number', function() {
+    const gridInvalid = 1;
+    const time = 1;
+    expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
+      Error,
+      'Grid invalid'
+    );
+  });
+  it('Throw Exception when grid is empty', function() {
+    const gridInvalid = [];
+    const time = 1;
+    expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
+      Error,
+      'Grid invalid'
+    );
+  });
+  it('Throw Exception when grid is array', function() {
+    const gridInvalid = [1, 2];
+    const time = 1;
+    expect(() => rotate2dKtime(gridInvalid, time)).to.throws(
+      Error,
+      'Grid invalid'
+    );
+  });
 });

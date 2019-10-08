@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 
 public class AcyclicLongestPath {
-    public void longestPath(List<Vertex> vertexList, Vertex sourceVertex){
+    public Double longestPath(List<Vertex> vertexList, Vertex sourceVertex){
 
         sourceVertex.setMaxDistance(0);
         TopologicalSort topologicalSort = new TopologicalSort();
@@ -30,7 +30,7 @@ public class AcyclicLongestPath {
         }
         Vertex vertexHasMaxDist = vertexList.stream().max(Comparator.comparing(Vertex::getMaxDistance)).orElseThrow(NoSuchElementException::new);
         System.out.println("Longest path: "+vertexHasMaxDist.getMaxDistance());
-
+        return vertexHasMaxDist.getMaxDistance();
 
     }
 }
